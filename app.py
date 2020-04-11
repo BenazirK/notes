@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from datetime import datetime 
 
 app = Flask(__name__)
 
@@ -31,6 +32,6 @@ def add_note():
 @app.route("/table")
 def table():
     notes_file = open("notes.txt", "r", encoding="utf-8")
-    rows = [[row[:10], row[10:].strip()] for row in notes_file]
+    rows = [[datetime.strptime(row[:10],"%Y-%m-%d"), row[10:].strip()] for row in notes_file]
     notes_file.close()
     return render_template("table.html", rows=rows)
