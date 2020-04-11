@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content%}
-    <h2>добавить заметку</h2>
-    <form action="{{ url_for('add_note') }}" method="POST">
-        <input type="text", name= "new-note" placeholder = "Текст заметки">
-        <input type="date" name="date">
-        <button>Добавить</button>
-    </form>
+    <div class="col-lg-6">
+        <h2>добавить заметку</h2>
+        <form action="{{ url_for('add_note') }}" method="POST">
+            <div class="input-group mb-3 input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Текст заметки</span>
+                </div>
+                <input type="text" name="note" placeholder="пишите сюда" class="form-control">
+            </div>
+            <div class="input-group mb-3 input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Дата</span>
+                </div>
+                <input type="date" name="date" placeholder="пишите сюда" class="form-control">
+            </div>
+            <button>Добавить</button>
+        </form>
+    </div>
 
 
 {% endblock %}
