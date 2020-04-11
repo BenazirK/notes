@@ -14,9 +14,9 @@ def hello(user_name):
     user_name= user_name.capitalize()
     return  render_template('hello.html', user_name=user_name)
 
-@app.route("/add-note-form")
-def add_note_form():
-    return render_template("add_note_form.html")
+@app.route("/add")
+def add():
+    return render_template("add.html")
 
 
 @app.route("/add-note", methods=["POST"])

@@ -3,7 +3,8 @@
 {% block content%}
     <h2>добавить заметку</h2>
     <form action="{{ url_for('add_note') }}" method="POST">
-        <input type="text", name= "new-note" >
+        <input type="text", name= "new-note" placeholder = "Текст заметки">
+        <input type="date" name="date">
         <button>Добавить</button>
     </form>
 
